@@ -396,14 +396,14 @@ function updateStats() {
       const sa = parseInt(s.a), sb = parseInt(s.b);
       stat[m.a].played++;
       stat[m.b].played++;
+      stat[m.a].pts += sa;
+      stat[m.b].pts += sb;
       if (sa > sb) {
-        stat[m.a].win++; stat[m.a].pts += 3;
+        stat[m.a].win++;
         stat[m.b].loss++;
       } else if (sb > sa) {
-        stat[m.b].win++; stat[m.b].pts += 3;
+        stat[m.b].win++;
         stat[m.a].loss++;
-      } else {
-        stat[m.a].pts++; stat[m.b].pts++;
       }
     }
   });
